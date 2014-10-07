@@ -29,6 +29,17 @@ class KeyboardViewController: UIInputViewController {
 
         keyboardView.nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
 
+        let server = HTTPServer()
+        server.setType("_http._tcp.")
+
+        var error: NSError?
+
+
+        if server.start(&error) {
+            NSLog("Listening \(server.listeningPort())")
+        } else {
+            NSLog("Error \(error)")
+        }
     }
 
     override func didReceiveMemoryWarning() {

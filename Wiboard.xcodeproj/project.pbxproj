@@ -17,6 +17,8 @@
 		0D632FFD19E4174A0095B03D /* Wiboard-Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D632FF519E4174A0095B03D /* Wiboard-Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D63300519E419BC0095B03D /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D63300419E419BC0095B03D /* KeyboardView.xib */; };
 		0DBCB61819E468B800E3CBFC /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCB61719E468B800E3CBFC /* KeyboardView.swift */; };
+		8F5876EE0961BA44DCD51739 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F334530BD2F4136DC11A495E /* libPods.a */; };
+		ACF200070CBF5EA5DA20B889 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F334530BD2F4136DC11A495E /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,12 @@
 		0D632FF919E4174A0095B03D /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		0D63300419E419BC0095B03D /* KeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
 		0DBCB61719E468B800E3CBFC /* KeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		0DBCB61919E46D4900E3CBFC /* Wiboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wiboard-Bridging-Header.h"; sourceTree = "<group>"; };
+		0DBCB61D19E46F6900E3CBFC /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		0DBCB61F19E4733700E3CBFC /* Wiboard-Keyboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wiboard-Keyboard-Bridging-Header.h"; sourceTree = "<group>"; };
+		165524B8A331AF48DA653263 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		ECAE97A7CD507F903600EE5E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F334530BD2F4136DC11A495E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F5876EE0961BA44DCD51739 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF200070CBF5EA5DA20B889 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,9 +107,11 @@
 			isa = PBXGroup;
 			children = (
 				0D632FCE19E415B60095B03D /* Wiboard */,
-				0D632FE419E415B60095B03D /* WiboardTests */,
 				0D632FF619E4174A0095B03D /* Wiboard-Keyboard */,
+				0D632FE419E415B60095B03D /* WiboardTests */,
 				0D632FCD19E415B60095B03D /* Products */,
+				EDEBA3D9CDDB1AF435118B47 /* Pods */,
+				4D954D87831CDA1DD2D3EFAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +134,7 @@
 				0D632FD819E415B60095B03D /* Images.xcassets */,
 				0D632FDA19E415B60095B03D /* LaunchScreen.xib */,
 				0D632FCF19E415B60095B03D /* Supporting Files */,
+				0DBCB61919E46D4900E3CBFC /* Wiboard-Bridging-Header.h */,
 			);
 			path = Wiboard;
 			sourceTree = "<group>";
@@ -158,6 +171,7 @@
 				0DBCB61719E468B800E3CBFC /* KeyboardView.swift */,
 				0D63300419E419BC0095B03D /* KeyboardView.xib */,
 				0D632FF719E4174A0095B03D /* Supporting Files */,
+				0DBCB61F19E4733700E3CBFC /* Wiboard-Keyboard-Bridging-Header.h */,
 			);
 			path = "Wiboard-Keyboard";
 			sourceTree = "<group>";
@@ -170,6 +184,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4D954D87831CDA1DD2D3EFAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0DBCB61D19E46F6900E3CBFC /* libPods.a */,
+				F334530BD2F4136DC11A495E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDEBA3D9CDDB1AF435118B47 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ECAE97A7CD507F903600EE5E /* Pods.debug.xcconfig */,
+				165524B8A331AF48DA653263 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,10 +209,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D632FEB19E415B60095B03D /* Build configuration list for PBXNativeTarget "Wiboard" */;
 			buildPhases = (
+				0F5FC3D2D25B6AFA3F87286D /* Check Pods Manifest.lock */,
 				0D632FC819E415B60095B03D /* Sources */,
 				0D632FC919E415B60095B03D /* Frameworks */,
 				0D632FCA19E415B60095B03D /* Resources */,
 				0D63300319E4174A0095B03D /* Embed App Extensions */,
+				EC81D84327191804AD758EDA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,9 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D63300019E4174A0095B03D /* Build configuration list for PBXNativeTarget "Wiboard-Keyboard" */;
 			buildPhases = (
+				9BBC77C87CA15042F0DFF849 /* Check Pods Manifest.lock */,
 				0D632FF119E4174A0095B03D /* Sources */,
 				0D632FF219E4174A0095B03D /* Frameworks */,
 				0D632FF319E4174A0095B03D /* Resources */,
+				2AE9A3BD9D91BFDDF4D5A20F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -297,6 +333,69 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F5FC3D2D25B6AFA3F87286D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2AE9A3BD9D91BFDDF4D5A20F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BBC77C87CA15042F0DFF849 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EC81D84327191804AD758EDA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0D632FC819E415B60095B03D /* Sources */ = {
@@ -441,23 +540,27 @@
 		};
 		0D632FEC19E415B60095B03D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECAE97A7CD507F903600EE5E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Wiboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Wiboard/Wiboard-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		0D632FED19E415B60095B03D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 165524B8A331AF48DA653263 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Wiboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Wiboard/Wiboard-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -497,6 +600,7 @@
 		};
 		0D63300119E4174A0095B03D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECAE97A7CD507F903600EE5E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -505,19 +609,30 @@
 				);
 				INFOPLIST_FILE = "Wiboard-Keyboard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Wiboard-Keyboard/Wiboard-Keyboard-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		0D63300219E4174A0095B03D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 165524B8A331AF48DA653263 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Wiboard-Keyboard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Wiboard-Keyboard/Wiboard-Keyboard-Bridging-Header.h";
 			};
 			name = Release;
 		};
