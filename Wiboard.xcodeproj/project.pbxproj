@@ -15,6 +15,8 @@
 		0D632FE819E415B60095B03D /* WiboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D632FE719E415B60095B03D /* WiboardTests.swift */; };
 		0D632FFA19E4174A0095B03D /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D632FF919E4174A0095B03D /* KeyboardViewController.swift */; };
 		0D632FFD19E4174A0095B03D /* Wiboard-Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D632FF519E4174A0095B03D /* Wiboard-Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0D63300519E419BC0095B03D /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D63300419E419BC0095B03D /* KeyboardView.xib */; };
+		0DBCB61819E468B800E3CBFC /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCB61719E468B800E3CBFC /* KeyboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,14 +27,7 @@
 			remoteGlobalIDString = 0D632FCB19E415B60095B03D;
 			remoteInfo = Wiboard;
 		};
-		0D632FFB19E4174A0095B03D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0D632FC419E415B60095B03D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0D632FF419E4174A0095B03D;
-			remoteInfo = "Wiboard-Keyboard";
-		};
-		0D632FFE19E4174A0095B03D /* PBXContainerItemProxy */ = {
+		0DBCB61519E41D6300E3CBFC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D632FC419E415B60095B03D /* Project object */;
 			proxyType = 1;
@@ -69,6 +64,8 @@
 		0D632FF519E4174A0095B03D /* Wiboard-Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Wiboard-Keyboard.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D632FF819E4174A0095B03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D632FF919E4174A0095B03D /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		0D63300419E419BC0095B03D /* KeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
+		0DBCB61719E468B800E3CBFC /* KeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				0D632FF919E4174A0095B03D /* KeyboardViewController.swift */,
+				0DBCB61719E468B800E3CBFC /* KeyboardView.swift */,
+				0D63300419E419BC0095B03D /* KeyboardView.xib */,
 				0D632FF719E4174A0095B03D /* Supporting Files */,
 			);
 			path = "Wiboard-Keyboard";
@@ -186,8 +185,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				0D632FFC19E4174A0095B03D /* PBXTargetDependency */,
-				0D632FFF19E4174A0095B03D /* PBXTargetDependency */,
+				0DBCB61619E41D6300E3CBFC /* PBXTargetDependency */,
 			);
 			name = Wiboard;
 			productName = Wiboard;
@@ -240,6 +238,7 @@
 				TargetAttributes = {
 					0D632FCB19E415B60095B03D = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 94WL5966HN;
 					};
 					0D632FE019E415B60095B03D = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -247,6 +246,7 @@
 					};
 					0D632FF419E4174A0095B03D = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 94WL5966HN;
 					};
 				};
 			};
@@ -292,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D63300519E419BC0095B03D /* KeyboardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D632FFA19E4174A0095B03D /* KeyboardViewController.swift in Sources */,
+				0DBCB61819E468B800E3CBFC /* KeyboardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,15 +333,10 @@
 			target = 0D632FCB19E415B60095B03D /* Wiboard */;
 			targetProxy = 0D632FE219E415B60095B03D /* PBXContainerItemProxy */;
 		};
-		0D632FFC19E4174A0095B03D /* PBXTargetDependency */ = {
+		0DBCB61619E41D6300E3CBFC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0D632FF419E4174A0095B03D /* Wiboard-Keyboard */;
-			targetProxy = 0D632FFB19E4174A0095B03D /* PBXContainerItemProxy */;
-		};
-		0D632FFF19E4174A0095B03D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0D632FF419E4174A0095B03D /* Wiboard-Keyboard */;
-			targetProxy = 0D632FFE19E4174A0095B03D /* PBXContainerItemProxy */;
+			targetProxy = 0DBCB61519E41D6300E3CBFC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -446,6 +443,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Wiboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -456,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Wiboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -499,6 +498,7 @@
 		0D63300119E4174A0095B03D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -513,6 +513,7 @@
 		0D63300219E4174A0095B03D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Wiboard-Keyboard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -539,6 +540,7 @@
 				0D632FED19E415B60095B03D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D632FEE19E415B60095B03D /* Build configuration list for PBXNativeTarget "WiboardTests" */ = {
 			isa = XCConfigurationList;
@@ -547,6 +549,7 @@
 				0D632FF019E415B60095B03D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D63300019E4174A0095B03D /* Build configuration list for PBXNativeTarget "Wiboard-Keyboard" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +558,7 @@
 				0D63300219E4174A0095B03D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
