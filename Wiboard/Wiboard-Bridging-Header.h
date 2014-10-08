@@ -7,4 +7,10 @@
 //
 
 #import <CocoaHTTPServer/HTTPServer.h>
+#import <CocoaHTTPServer/HTTPResponse.h>
+#import <CocoaHTTPServer/HTTPDynamicFileResponse.h>
 #import <CocoaHTTPServer/HTTPConnection.h>
+#import <CocoaHTTPServer/HTTPMessage.h>
+#import <CocoaHTTPServer/WebSocket.h>
+
+#import "HTTPConnection+SwiftExtensions.h"

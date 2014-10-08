@@ -8,10 +8,52 @@
 
 import Foundation
 
-class HTTPWiboardConnection: HTTPConnection {
+class HTTPWiboardConnection: HTTPConnection, WebSocketDelegate {
 
-    override func supportsMethod(method: String!, atPath path: String!) -> Bool {
-        NSLog("[\(method)] \(path)")
-        return true
+    var webSocket: WebSocket?
+    
+    override func httpResponseForMethod(method: String!, URI path: String!) -> NSObject! {
+        NSLog("[\( method )] \( path )")
+
+        switch (method, path) {
+        case ("GET", "/app.js"):
+            let host = self.request.headerField("Host")
+            let proto = self.isSecureServer() ? "wss" : "ws"
+            let wsURL = "\( proto )://\( host )/service"
+
+            let response = HTTPDynamicFileResponse(filePath: self.filePathForURI(path),
+                forConnection: self,
+                separator: "%%",
+                replacementDictionary: ["WEBSOCKET_URL": wsURL])
+
+            return response
+
+        default:
+            return super.httpResponseForMethod(method, URI: path)
+        }
     }
+
+    override func webSocketForURI(path: String!) -> WebSocket! {
+        NSLog("[WebSocket] \( path )")
+
+        let socket = WebSocket(request: self.request, socket: self.asyncSocket)
+        socket.delegate = self
+        webSocket = socket
+        return socket
+    }
+
+
+    func webSocketDidOpen(ws: WebSocket!) {
+        NSLog("webSocketDidOpen")
+    }
+
+    func webSocketDidClose(ws: WebSocket!) {
+        NSLog("webSocketDidClose")
+    }
+
+    func webSocket(ws: WebSocket!, didReceiveMessage msg: String!) {
+        NSLog("webSocketDidReceiveMessage \( msg )")
+    }
+
+
 }

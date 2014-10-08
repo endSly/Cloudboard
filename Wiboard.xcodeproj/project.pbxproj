@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D06BD1319E56F9D006863A5 /* web.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D06BD1219E56F9D006863A5 /* web.bundle */; };
 		0D06BD1419E56F9D006863A5 /* web.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D06BD1219E56F9D006863A5 /* web.bundle */; };
+		0D06BD1C19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D06BD1B19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.m */; };
+		0D06BD1D19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D06BD1B19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.m */; };
 		0D632FD219E415B60095B03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D632FD119E415B60095B03D /* AppDelegate.swift */; };
 		0D632FD419E415B60095B03D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D632FD319E415B60095B03D /* ViewController.swift */; };
 		0D632FD719E415B60095B03D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D632FD519E415B60095B03D /* Main.storyboard */; };
@@ -58,6 +60,8 @@
 
 /* Begin PBXFileReference section */
 		0D06BD1219E56F9D006863A5 /* web.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = web.bundle; path = Shared/web.bundle; sourceTree = "<group>"; };
+		0D06BD1A19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "HTTPConnection+SwiftExtensions.h"; path = "Shared/HTTPConnection+SwiftExtensions.h"; sourceTree = "<group>"; };
+		0D06BD1B19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "HTTPConnection+SwiftExtensions.m"; path = "Shared/HTTPConnection+SwiftExtensions.m"; sourceTree = "<group>"; };
 		0D632FCC19E415B60095B03D /* Wiboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wiboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D632FD019E415B60095B03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D632FD119E415B60095B03D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -194,8 +198,10 @@
 		0DBCB62019E4761000E3CBFC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				0DBCB62119E4765900E3CBFC /* HTTPWiboardConnection.swift */,
 				0D06BD1219E56F9D006863A5 /* web.bundle */,
+				0DBCB62119E4765900E3CBFC /* HTTPWiboardConnection.swift */,
+				0D06BD1A19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.h */,
+				0D06BD1B19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 			files = (
 				0D632FD419E415B60095B03D /* ViewController.swift in Sources */,
 				0D632FD219E415B60095B03D /* AppDelegate.swift in Sources */,
+				0D06BD1C19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.m in Sources */,
 				0DBCB62219E4765900E3CBFC /* HTTPWiboardConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +447,7 @@
 			files = (
 				0D632FFA19E4174A0095B03D /* KeyboardViewController.swift in Sources */,
 				0DBCB61819E468B800E3CBFC /* KeyboardView.swift in Sources */,
+				0D06BD1D19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.m in Sources */,
 				0DBCB62319E4765900E3CBFC /* HTTPWiboardConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

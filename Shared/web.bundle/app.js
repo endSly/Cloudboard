@@ -4,11 +4,10 @@ $.extend($.easing, {
   }
 });
 
-/*
 var connection = new WebSocket('%%WEBSOCKET_URL%%')
 
 connection.onopen = function() {
-
+  connection.write("TEST")
 };
 
 connection.onerror = function (error) {
@@ -18,7 +17,6 @@ connection.onerror = function (error) {
 connection.onmessage = function (msg) {
   console.log('Server: ' + msg.data);
 };
-*/
 
 $(function() {
   var timeoutHandle = null;
