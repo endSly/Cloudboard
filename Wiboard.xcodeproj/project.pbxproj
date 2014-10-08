@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D06BD1319E56F9D006863A5 /* web.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D06BD1219E56F9D006863A5 /* web.bundle */; };
+		0D06BD1419E56F9D006863A5 /* web.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D06BD1219E56F9D006863A5 /* web.bundle */; };
 		0D632FD219E415B60095B03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D632FD119E415B60095B03D /* AppDelegate.swift */; };
 		0D632FD419E415B60095B03D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D632FD319E415B60095B03D /* ViewController.swift */; };
 		0D632FD719E415B60095B03D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D632FD519E415B60095B03D /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 		0D632FFD19E4174A0095B03D /* Wiboard-Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D632FF519E4174A0095B03D /* Wiboard-Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D63300519E419BC0095B03D /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D63300419E419BC0095B03D /* KeyboardView.xib */; };
 		0DBCB61819E468B800E3CBFC /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCB61719E468B800E3CBFC /* KeyboardView.swift */; };
+		0DBCB62219E4765900E3CBFC /* HTTPWiboardConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCB62119E4765900E3CBFC /* HTTPWiboardConnection.swift */; };
+		0DBCB62319E4765900E3CBFC /* HTTPWiboardConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCB62119E4765900E3CBFC /* HTTPWiboardConnection.swift */; };
 		8F5876EE0961BA44DCD51739 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F334530BD2F4136DC11A495E /* libPods.a */; };
 		ACF200070CBF5EA5DA20B889 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F334530BD2F4136DC11A495E /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -53,6 +57,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D06BD1219E56F9D006863A5 /* web.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = web.bundle; path = Shared/web.bundle; sourceTree = "<group>"; };
 		0D632FCC19E415B60095B03D /* Wiboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wiboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D632FD019E415B60095B03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D632FD119E415B60095B03D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 		0DBCB61919E46D4900E3CBFC /* Wiboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wiboard-Bridging-Header.h"; sourceTree = "<group>"; };
 		0DBCB61D19E46F6900E3CBFC /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		0DBCB61F19E4733700E3CBFC /* Wiboard-Keyboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wiboard-Keyboard-Bridging-Header.h"; sourceTree = "<group>"; };
+		0DBCB62119E4765900E3CBFC /* HTTPWiboardConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPWiboardConnection.swift; path = Shared/HTTPWiboardConnection.swift; sourceTree = "<group>"; };
 		165524B8A331AF48DA653263 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		ECAE97A7CD507F903600EE5E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F334530BD2F4136DC11A495E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +112,7 @@
 		0D632FC319E415B60095B03D = {
 			isa = PBXGroup;
 			children = (
+				0DBCB62019E4761000E3CBFC /* Shared */,
 				0D632FCE19E415B60095B03D /* Wiboard */,
 				0D632FF619E4174A0095B03D /* Wiboard-Keyboard */,
 				0D632FE419E415B60095B03D /* WiboardTests */,
@@ -182,6 +189,15 @@
 				0D632FF819E4174A0095B03D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0DBCB62019E4761000E3CBFC /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0DBCB62119E4765900E3CBFC /* HTTPWiboardConnection.swift */,
+				0D06BD1219E56F9D006863A5 /* web.bundle */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 		4D954D87831CDA1DD2D3EFAF /* Frameworks */ = {
@@ -311,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D06BD1319E56F9D006863A5 /* web.bundle in Resources */,
 				0D632FD719E415B60095B03D /* Main.storyboard in Resources */,
 				0D632FDC19E415B60095B03D /* LaunchScreen.xib in Resources */,
 				0D632FD919E415B60095B03D /* Images.xcassets in Resources */,
@@ -328,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D06BD1419E56F9D006863A5 /* web.bundle in Resources */,
 				0D63300519E419BC0095B03D /* KeyboardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +422,7 @@
 			files = (
 				0D632FD419E415B60095B03D /* ViewController.swift in Sources */,
 				0D632FD219E415B60095B03D /* AppDelegate.swift in Sources */,
+				0DBCB62219E4765900E3CBFC /* HTTPWiboardConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +440,7 @@
 			files = (
 				0D632FFA19E4174A0095B03D /* KeyboardViewController.swift in Sources */,
 				0DBCB61819E468B800E3CBFC /* KeyboardView.swift in Sources */,
+				0DBCB62319E4765900E3CBFC /* HTTPWiboardConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

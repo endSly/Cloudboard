@@ -10,11 +10,13 @@ import UIKit
 
 class KeyboardViewController: UIInputViewController {
 
+    var httpServer: HTTPServer?
+
     var keyboardView: KeyboardView!
 
     override func updateViewConstraints() {
         super.updateViewConstraints()
-    
+
         // Add custom view sizing constraints here
     }
 
@@ -31,15 +33,20 @@ class KeyboardViewController: UIInputViewController {
 
         let server = HTTPServer()
         server.setType("_http._tcp.")
+        server.setConnectionClass(HTTPWiboardConnection)
+
+        let path = NSBundle.mainBundle().resourcePath!.stringByAppendingPathComponent("web.bundle")
+        server.setDocumentRoot(path)
 
         var error: NSError?
-
 
         if server.start(&error) {
             NSLog("Listening \(server.listeningPort())")
         } else {
             NSLog("Error \(error)")
         }
+
+        httpServer = server
     }
 
     override func didReceiveMemoryWarning() {
