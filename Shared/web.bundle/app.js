@@ -7,7 +7,7 @@ $.extend($.easing, {
 var connection = new WebSocket('%%WEBSOCKET_URL%%')
 
 connection.onopen = function() {
-  connection.write("TEST")
+    //connection.send(JSON.stringify({}))
 };
 
 connection.onerror = function (error) {
@@ -23,6 +23,9 @@ $(function() {
 
   function fadeOldText() {
     var oldContent = $('#editable-p').html();
+    var text = $('#editable-p').text();
+    connection.send(JSON.stringify({type: 'text', content: text}));
+
     var oldSpan = $('<span class="old-p">').html(oldContent);
 
     $('#edit-paragraph').prepend(oldSpan);

@@ -37,23 +37,9 @@ class HTTPWiboardConnection: HTTPConnection, WebSocketDelegate {
         NSLog("[WebSocket] \( path )")
 
         let socket = WebSocket(request: self.request, socket: self.asyncSocket)
-        socket.delegate = self
+        socket.delegate = WiboardService.sharedService
         webSocket = socket
         return socket
     }
-
-
-    func webSocketDidOpen(ws: WebSocket!) {
-        NSLog("webSocketDidOpen")
-    }
-
-    func webSocketDidClose(ws: WebSocket!) {
-        NSLog("webSocketDidClose")
-    }
-
-    func webSocket(ws: WebSocket!, didReceiveMessage msg: String!) {
-        NSLog("webSocketDidReceiveMessage \( msg )")
-    }
-
 
 }

@@ -20,6 +20,10 @@
 		0D632FFA19E4174A0095B03D /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D632FF919E4174A0095B03D /* KeyboardViewController.swift */; };
 		0D632FFD19E4174A0095B03D /* Wiboard-Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D632FF519E4174A0095B03D /* Wiboard-Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D63300519E419BC0095B03D /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D63300419E419BC0095B03D /* KeyboardView.xib */; };
+		0D852C2919E71FC200D48739 /* WiboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D852C2819E71FC200D48739 /* WiboardService.swift */; };
+		0D852C2C19E724D300D48739 /* WiboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D852C2819E71FC200D48739 /* WiboardService.swift */; };
+		0D852C2E19E7376500D48739 /* LocalIPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D852C2D19E7376500D48739 /* LocalIPAddress.m */; };
+		0D852C3019E737ED00D48739 /* LocalIPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D852C2D19E7376500D48739 /* LocalIPAddress.m */; };
 		0DBCB61819E468B800E3CBFC /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCB61719E468B800E3CBFC /* KeyboardView.swift */; };
 		0DBCB62219E4765900E3CBFC /* HTTPWiboardConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCB62119E4765900E3CBFC /* HTTPWiboardConnection.swift */; };
 		0DBCB62319E4765900E3CBFC /* HTTPWiboardConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCB62119E4765900E3CBFC /* HTTPWiboardConnection.swift */; };
@@ -76,6 +80,9 @@
 		0D632FF819E4174A0095B03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D632FF919E4174A0095B03D /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		0D63300419E419BC0095B03D /* KeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
+		0D852C2819E71FC200D48739 /* WiboardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WiboardService.swift; sourceTree = "<group>"; };
+		0D852C2D19E7376500D48739 /* LocalIPAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalIPAddress.m; path = Shared/LocalIPAddress.m; sourceTree = "<group>"; };
+		0D852C2F19E7379000D48739 /* LocalIPAddress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LocalIPAddress.h; path = Shared/LocalIPAddress.h; sourceTree = "<group>"; };
 		0DBCB61719E468B800E3CBFC /* KeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		0DBCB61919E46D4900E3CBFC /* Wiboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wiboard-Bridging-Header.h"; sourceTree = "<group>"; };
 		0DBCB61D19E46F6900E3CBFC /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
@@ -195,13 +202,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0DBCB62019E4761000E3CBFC /* Shared */ = {
+		0D852C2A19E7203500D48739 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				0D06BD1219E56F9D006863A5 /* web.bundle */,
 				0DBCB62119E4765900E3CBFC /* HTTPWiboardConnection.swift */,
+				0D852C2819E71FC200D48739 /* WiboardService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		0D852C2B19E7204900D48739 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
 				0D06BD1A19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.h */,
 				0D06BD1B19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.m */,
+				0D852C2F19E7379000D48739 /* LocalIPAddress.h */,
+				0D852C2D19E7376500D48739 /* LocalIPAddress.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		0DBCB62019E4761000E3CBFC /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0D852C2B19E7204900D48739 /* Utilities */,
+				0D852C2A19E7203500D48739 /* Service */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -430,6 +456,8 @@
 				0D632FD219E415B60095B03D /* AppDelegate.swift in Sources */,
 				0D06BD1C19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.m in Sources */,
 				0DBCB62219E4765900E3CBFC /* HTTPWiboardConnection.swift in Sources */,
+				0D852C2919E71FC200D48739 /* WiboardService.swift in Sources */,
+				0D852C2E19E7376500D48739 /* LocalIPAddress.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +473,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D852C3019E737ED00D48739 /* LocalIPAddress.m in Sources */,
+				0D852C2C19E724D300D48739 /* WiboardService.swift in Sources */,
 				0D632FFA19E4174A0095B03D /* KeyboardViewController.swift in Sources */,
 				0DBCB61819E468B800E3CBFC /* KeyboardView.swift in Sources */,
 				0D06BD1D19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.m in Sources */,

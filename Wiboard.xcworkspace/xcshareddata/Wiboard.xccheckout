@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EEF6A5FE-0B4E-4B97-A3DF-77279CB4E882</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Wiboard</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6AF20C6B3F36991CE3B5C43C4CE44B04A5E4F92F</key>
+		<string>github.com:endSly/Wiboard.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Wiboard.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6AF20C6B3F36991CE3B5C43C4CE44B04A5E4F92F</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:endSly/Wiboard.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6AF20C6B3F36991CE3B5C43C4CE44B04A5E4F92F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6AF20C6B3F36991CE3B5C43C4CE44B04A5E4F92F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Wiboard</string>
+		</dict>
+	</array>
+</dict>
+</plist>

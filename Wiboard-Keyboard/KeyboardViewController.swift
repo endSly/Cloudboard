@@ -8,9 +8,7 @@
 
 import UIKit
 
-class KeyboardViewController: UIInputViewController {
-
-    var httpServer: HTTPServer?
+class KeyboardViewController: UIInputViewController, WiboardServiceDelegate {
 
     var keyboardView: KeyboardView!
 
@@ -26,27 +24,16 @@ class KeyboardViewController: UIInputViewController {
         var nib = UINib(nibName: "KeyboardView", bundle: nil)
         let objects = nib.instantiateWithOwner(self, options: nil)
         keyboardView = objects[0] as KeyboardView
-        keyboardView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        //keyboardView.autoresizingMask = UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(keyboardView)
 
         keyboardView.nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
 
-        let server = HTTPServer()
-        server.setType("_http._tcp.")
-        server.setConnectionClass(HTTPWiboardConnection)
+        let service = WiboardService.sharedService
+        service.delegate = self
+        service.start()
 
-        let path = NSBundle.mainBundle().resourcePath!.stringByAppendingPathComponent("web.bundle")
-        server.setDocumentRoot(path)
-
-        var error: NSError?
-
-        if server.start(&error) {
-            NSLog("Listening \(server.listeningPort())")
-        } else {
-            NSLog("Error \(error)")
-        }
-
-        httpServer = server
+        self.keyboardView.hostAddrLabel.text = "\( localIPAddress() ):\( service.port )"
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,5 +49,38 @@ class KeyboardViewController: UIInputViewController {
         // The app has just changed the document's contents, the document context has been updated.
 
     }
+
+    // MARK: Wiboard service
+
+    func serviceTextHasInserted(service: WiboardService, text: String) {
+        let docProxy = self.textDocumentProxy as UITextDocumentProxy
+
+        println("****************")
+
+        println("BEFORE")
+        println(docProxy.documentContextBeforeInput)
+        println("AFTER")
+        println(docProxy.documentContextAfterInput)
+
+
+        docProxy.insertText(text)
+
+        println("BEFORE")
+        println(docProxy.documentContextBeforeInput)
+        println("AFTER")
+        println(docProxy.documentContextAfterInput)
+    }
+
+    func serviceDeleteBackwardHasInserted(service: WiboardService) {
+        let docProxy = self.textDocumentProxy as UITextDocumentProxy
+        docProxy.deleteBackward()
+    }
+
+    func serviceDidOpenConnection(service: WiboardService) {
+    }
+
+    func serviceDidCloseConnection(service: WiboardService) {
+    }
+
 
 }

@@ -14,3 +14,5 @@
 #import <CocoaHTTPServer/WebSocket.h>
 
 #import "HTTPConnection+SwiftExtensions.h"
+
+#import "LocalIPAddress.h"

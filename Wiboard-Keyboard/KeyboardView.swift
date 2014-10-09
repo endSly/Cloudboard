@@ -11,4 +11,5 @@ import UIKit
 class KeyboardView: UIView {
 
     @IBOutlet var nextKeyboardButton: UIButton!
+    @IBOutlet var hostAddrLabel: UILabel!
 }
