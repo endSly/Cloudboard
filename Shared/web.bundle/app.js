@@ -27,7 +27,12 @@ connection.onerror = function (error) {
 
 connection.onmessage = function (msg) {
   var obj = JSON.parse(msg.data);
-  console.log('Server: ' + msg.data);
+
+  if (obj.type == "content-around") {
+    $('#content-before').text(obj.before);
+    $('#content-after').text(obj.after);
+
+  }
 };
 
 function sendMessage(obj) {
@@ -40,7 +45,7 @@ $(function() {
 
   function sendText() {
     var text = $('#content-editable').text();
-    send({type: 'text', content: text});
+    sendMessage({type: 'text', content: text});
 
     $('#content-editable').html('&nbsp;');
   };

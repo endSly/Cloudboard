@@ -39,32 +39,20 @@ body {
 }
 
 #edit-paragraph span {
-    text-align: center;
     outline: none;
 }
 
-span.content-before, span.content-after {
-    color: gray;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
+span#content-before, span#content-after {
+    color: lightgray;
 }
 
 #status-container .status-msg {
   display: none;
 }
 
-#status-container.disconnected .status-msg.disconnected {
-  display: block;
-}
-
-#status-container.error .status-msg.error {
-  display: block;
-}
-
-#status-container.connected .status-msg.connected {
+#status-container.disconnected  .status-msg.disconnected,
+#status-container.error         .status-msg.error,
+#status-container.connected     .status-msg.connected {
   display: block;
 }
 

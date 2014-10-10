@@ -19,6 +19,10 @@ protocol WiboardServiceDelegate {
     func serviceDidOpenConnection(service: WiboardService)
     func serviceDidCloseConnection(service: WiboardService)
 
+    // Data source
+    func serviceContentAfterInput(service: WiboardService) -> String
+    func serviceContentBeforeInput(service: WiboardService) -> String
+
 }
 
 class WiboardService: WebSocketDelegate {
@@ -43,7 +47,7 @@ class WiboardService: WebSocketDelegate {
         let server = HTTPServer()
         server.setType("_http._tcp.")
         server.setConnectionClass(HTTPWiboardConnection)
-        //server.setPort(12345)
+        server.setPort(12345)
 
         let path = NSBundle.mainBundle().resourcePath!.stringByAppendingPathComponent("web.bundle")
         server.setDocumentRoot(path)
@@ -65,7 +69,6 @@ class WiboardService: WebSocketDelegate {
         websockets.append(socket)
     }
 
-
     func webSocketDidOpen(ws: WebSocket!) {
         NSLog("webSocketDidOpen")
     }
@@ -86,10 +89,33 @@ class WiboardService: WebSocketDelegate {
         switch json["type"] as String {
         case "text":
             delegate?.serviceTextHasInserted(self, text: json["content"] as String)
+            sendContentAroundText(ws)
 
         default:
             break
         }
+    }
+
+    private func sendMessage(ws:WebSocket, message: AnyObject) {
+        var error: NSError?
+        let data = NSJSONSerialization.dataWithJSONObject(message, options: NSJSONWritingOptions.allZeros, error: &error)
+
+        let json = NSString(data: data!, encoding: NSUTF8StringEncoding)
+        ws.sendMessage(json)
+
+    }
+
+    private func sendContentAroundText(ws: WebSocket) {
+        let contentBefore = delegate!.serviceContentBeforeInput(self)
+        let contentAfter = delegate!.serviceContentAfterInput(self)
+
+        let message = [
+            "type": "content-around",
+            "before": contentBefore,
+            "after": contentAfter
+        ]
+
+        sendMessage(ws, message: message as [String: String])
 
     }
 

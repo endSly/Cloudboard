@@ -82,5 +82,21 @@ class KeyboardViewController: UIInputViewController, WiboardServiceDelegate {
     func serviceDidCloseConnection(service: WiboardService) {
     }
 
+    func serviceContentAfterInput(service: WiboardService) -> String {
+        let docProxy = self.textDocumentProxy as UITextDocumentProxy
+        if let content = docProxy.documentContextAfterInput {
+            return content
+        }
+        return ""
+    }
+
+    func serviceContentBeforeInput(service: WiboardService) -> String {
+        let docProxy = self.textDocumentProxy as UITextDocumentProxy
+        if let content = docProxy.documentContextBeforeInput {
+            return content
+        }
+        return ""
+    }
+
 
 }

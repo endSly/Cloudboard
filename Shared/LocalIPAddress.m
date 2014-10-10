@@ -12,7 +12,7 @@
 #include <arpa/inet.h>
 
 NSString *localIPAddress() {
-    NSString *address = @"error";
+    NSString *address = nil;
     struct ifaddrs *interfaces = NULL;
     struct ifaddrs *temp_addr = NULL;
     int success = 0;
