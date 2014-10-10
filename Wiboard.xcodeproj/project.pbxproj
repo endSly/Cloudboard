@@ -11,6 +11,8 @@
 		0D06BD1419E56F9D006863A5 /* web.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D06BD1219E56F9D006863A5 /* web.bundle */; };
 		0D06BD1C19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D06BD1B19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.m */; };
 		0D06BD1D19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D06BD1B19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.m */; };
+		0D3EC09A19E875E500856192 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D3EC09919E875E500856192 /* ionicons.ttf */; };
+		0D3EC09B19E875E500856192 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D3EC09919E875E500856192 /* ionicons.ttf */; };
 		0D632FD219E415B60095B03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D632FD119E415B60095B03D /* AppDelegate.swift */; };
 		0D632FD419E415B60095B03D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D632FD319E415B60095B03D /* ViewController.swift */; };
 		0D632FD719E415B60095B03D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D632FD519E415B60095B03D /* Main.storyboard */; };
@@ -66,6 +68,7 @@
 		0D06BD1219E56F9D006863A5 /* web.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = web.bundle; path = Shared/web.bundle; sourceTree = "<group>"; };
 		0D06BD1A19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "HTTPConnection+SwiftExtensions.h"; path = "Shared/HTTPConnection+SwiftExtensions.h"; sourceTree = "<group>"; };
 		0D06BD1B19E5DCCB006863A5 /* HTTPConnection+SwiftExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "HTTPConnection+SwiftExtensions.m"; path = "Shared/HTTPConnection+SwiftExtensions.m"; sourceTree = "<group>"; };
+		0D3EC09919E875E500856192 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
 		0D632FCC19E415B60095B03D /* Wiboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wiboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D632FD019E415B60095B03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D632FD119E415B60095B03D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,9 +123,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D3EC09819E875D400856192 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0D3EC09919E875E500856192 /* ionicons.ttf */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		0D632FC319E415B60095B03D = {
 			isa = PBXGroup;
 			children = (
+				0D3EC09819E875D400856192 /* Assets */,
 				0DBCB62019E4761000E3CBFC /* Shared */,
 				0D632FCE19E415B60095B03D /* Wiboard */,
 				0D632FF619E4174A0095B03D /* Wiboard-Keyboard */,
@@ -360,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D06BD1319E56F9D006863A5 /* web.bundle in Resources */,
+				0D3EC09A19E875E500856192 /* ionicons.ttf in Resources */,
 				0D632FD719E415B60095B03D /* Main.storyboard in Resources */,
 				0D632FDC19E415B60095B03D /* LaunchScreen.xib in Resources */,
 				0D632FD919E415B60095B03D /* Images.xcassets in Resources */,
@@ -377,6 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D3EC09B19E875E500856192 /* ionicons.ttf in Resources */,
 				0D06BD1419E56F9D006863A5 /* web.bundle in Resources */,
 				0D63300519E419BC0095B03D /* KeyboardView.xib in Resources */,
 			);

@@ -24,16 +24,19 @@ class KeyboardViewController: UIInputViewController, WiboardServiceDelegate {
         var nib = UINib(nibName: "KeyboardView", bundle: nil)
         let objects = nib.instantiateWithOwner(self, options: nil)
         keyboardView = objects[0] as KeyboardView
-        //keyboardView.autoresizingMask = UIViewAutoresizing.FlexibleHeight
+        keyboardView.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
+        keyboardView.frame = self.view.frame
         self.view.addSubview(keyboardView)
 
         keyboardView.nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
 
-        let service = WiboardService.sharedService
-        service.delegate = self
-        service.start()
+        dispatch_async(dispatch_get_main_queue()) {
+            let service = WiboardService.sharedService
+            service.delegate = self
+            service.start()
 
-        self.keyboardView.hostAddrLabel.text = "\( localIPAddress() ):\( service.port )"
+            self.keyboardView.hostAddrLabel.text = "\( localIPAddress() ):\( service.port )"
+        }
     }
 
     override func didReceiveMemoryWarning() {
