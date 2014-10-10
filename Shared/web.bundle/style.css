@@ -39,7 +39,14 @@ body {
 }
 
 #edit-paragraph span {
+    display: inline-block;
     outline: none;
+    min-height: 18px;
+    min-width: 1px;
+}
+
+span#content-editable {
+  margin: 0 -5px;
 }
 
 span#content-before, span#content-after {

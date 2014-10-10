@@ -23,6 +23,8 @@ protocol WiboardServiceDelegate {
     func serviceContentAfterInput(service: WiboardService) -> String
     func serviceContentBeforeInput(service: WiboardService) -> String
 
+    func service(service: WiboardService, didAdjustTextPositionByOffset offset: Int)
+
 }
 
 class WiboardService: WebSocketDelegate {
@@ -70,17 +72,17 @@ class WiboardService: WebSocketDelegate {
     }
 
     func webSocketDidOpen(ws: WebSocket!) {
-        NSLog("webSocketDidOpen")
+        sendContentAroundText(ws)
     }
 
     func webSocketDidClose(ws: WebSocket!) {
-        NSLog("webSocketDidClose")
+        //NSLog("webSocketDidClose")
         // Remove closed ws
         websockets = websockets.filter { $0 != ws }
     }
 
     func webSocket(ws: WebSocket!, didReceiveMessage msg: String!) {
-        NSLog("webSocketDidReceiveMessage \( msg )")
+        //NSLog("webSocketDidReceiveMessage \( msg )\n")
 
         var error: NSError?
         let jsonData = msg.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) as NSData!
@@ -89,11 +91,15 @@ class WiboardService: WebSocketDelegate {
         switch json["type"] as String {
         case "text":
             delegate?.serviceTextHasInserted(self, text: json["content"] as String)
-            sendContentAroundText(ws)
-
+        case "movement":
+            delegate?.service(self, didAdjustTextPositionByOffset: json["offset"] as Int)
+        case "backward":
+            delegate?.serviceDeleteBackwardHasInserted(self)
         default:
             break
         }
+
+        sendContentAroundText(ws)
     }
 
     private func sendMessage(ws:WebSocket, message: AnyObject) {
@@ -116,7 +122,5 @@ class WiboardService: WebSocketDelegate {
         ]
 
         sendMessage(ws, message: message as [String: String])
-
     }
-
 }

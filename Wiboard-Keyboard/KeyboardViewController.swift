@@ -54,21 +54,7 @@ class KeyboardViewController: UIInputViewController, WiboardServiceDelegate {
 
     func serviceTextHasInserted(service: WiboardService, text: String) {
         let docProxy = self.textDocumentProxy as UITextDocumentProxy
-
-        println("****************")
-
-        println("BEFORE")
-        println(docProxy.documentContextBeforeInput)
-        println("AFTER")
-        println(docProxy.documentContextAfterInput)
-
-
         docProxy.insertText(text)
-
-        println("BEFORE")
-        println(docProxy.documentContextBeforeInput)
-        println("AFTER")
-        println(docProxy.documentContextAfterInput)
     }
 
     func serviceDeleteBackwardHasInserted(service: WiboardService) {
@@ -80,6 +66,11 @@ class KeyboardViewController: UIInputViewController, WiboardServiceDelegate {
     }
 
     func serviceDidCloseConnection(service: WiboardService) {
+    }
+
+    func service(service: WiboardService, didAdjustTextPositionByOffset offset: Int) {
+        let docProxy = self.textDocumentProxy as UITextDocumentProxy
+        docProxy.adjustTextPositionByCharacterOffset(offset)
     }
 
     func serviceContentAfterInput(service: WiboardService) -> String {
