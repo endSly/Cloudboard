@@ -1,17 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Wiboard</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div id="edit-container">
-    <p id="edit-paragraph">
+  <header class="container">
+    <div class="content">
+      <div id="status-container" class="disconnected">
+        <div class="status-msg disconnected">
+          Disconnected
+        </div>
+        <div class="status-msg error">
+          Error
+        </div>
+        <div class="status-msg connected">
+          Connected
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="edit-container" class="container">
+    <p id="edit-paragraph" class="content">
       <span id="content-before">&nbsp;</span>
-      <span id="editable-p" contentEditable="true"></span>
+      <span id="content-editable" contentEditable="true"></span>
       <span id="content-after">&nbsp;</span>
     </p>
   </div>
+  <footer class="container">
+
+  </footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="/app.js"></script>
 </body>

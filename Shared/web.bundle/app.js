@@ -1,57 +1,62 @@
-$.extend($.easing, {
-  easeOutQuad: function (x, t, b, c, d) {
-    return -c *(t/=d)*(t-2) + b;
-  }
-});
+var connection = new WebSocket('%%WEBSOCKET_URL%%');
 
-var connection = new WebSocket('%%WEBSOCKET_URL%%')
+var openedConnections = 0;
 
 connection.onopen = function() {
-    //connection.send(JSON.stringify({}))
+  openedConnections++;
+  $('#status-container')
+    .removeClass('error disconnected')
+    .addClass('connected');
+};
+
+connection.onclose = function() {
+  if (!--openedConnections) {
+    $('#status-container')
+      .removeClass('error connected')
+      .addClass('disconnected');
+  }
 };
 
 connection.onerror = function (error) {
   console.log('WebSocket Error ' + error);
+
+  $('#status-container')
+    .removeClass('connected disconnected')
+    .addClass('error');
 };
 
 connection.onmessage = function (msg) {
+  var obj = JSON.parse(msg.data);
   console.log('Server: ' + msg.data);
 };
+
+function sendMessage(obj) {
+  var json = JSON.stringify(obj);
+  connection.send(json);
+}
 
 $(function() {
   var timeoutHandle = null;
 
-  function fadeOldText() {
-    var oldContent = $('#editable-p').html();
-    var text = $('#editable-p').text();
-    connection.send(JSON.stringify({type: 'text', content: text}));
+  function sendText() {
+    var text = $('#content-editable').text();
+    send({type: 'text', content: text});
 
-    var oldSpan = $('<span class="old-p">').html(oldContent);
-
-    $('#edit-paragraph').prepend(oldSpan);
-    $('#editable-p').html('&nbsp;');
-
-    oldSpan.animate({
-      bottom: 160,
-      opacity: 0
-    }, 500, 'easeOutQuad', function() {
-      oldSpan.remove();
-
-    });
+    $('#content-editable').html('&nbsp;');
   };
 
-  $('#editable-p').on('keyup', function(e) {
+  $('#content-editable').on('keyup', function(e) {
     if (timeoutHandle)
       clearTimeout(timeoutHandle);
 
-    timeoutHandle = setTimeout(fadeOldText, 750);
+    timeoutHandle = setTimeout(sendText, 750);
 
     console.log(e.keyCode)
     return false;
   });
 
   $('#edit-container').on('click', function() {
-    $('#editable-p').focus()
+    $('#content-editable').focus()
   })
 });
 

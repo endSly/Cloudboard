@@ -4,35 +4,36 @@ body {
     padding: 0;
     margin: 0;
     width: 100%;
+    font-family: 'Open Sans', sans-serif;
 }
 
-#input-area {
-    width: 0;
-    height: 0;
-    opacity: 0;
+.container {
+    width:100%;
+    margin: 24px 0;
+    padding: 0;
+    min-height: 200px;
+}
+
+.content {
+    margin: 16px 10%;
 }
 
 #edit-container {
-    width:100%;
     background-color: #F7F7F7;
-    min-height:200px;
-    margin:0 0;
-    padding: 0;
-    position:relative;
-    overflow:auto;
+    min-height: 320px;
+    position: relative;
+    overflow: auto;
 }
 
 #edit-paragraph {
-    font-family: 'Open Sans', sans-serif;
     font-size: 28px;
-    min-height:28px;
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
+    min-height: 28px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     text-align: center;
     outline: none;
-    margin: 16px 10%;
     padding-bottom: 2px;
     border-bottom: 1px dotted black;
 }
@@ -42,11 +43,29 @@ body {
     outline: none;
 }
 
-#edit-paragraph span.old-p {
-    color: red;
+span.content-before, span.content-after {
+    color: gray;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     text-align: center;
 }
+
+#status-container .status-msg {
+  display: none;
+}
+
+#status-container.disconnected .status-msg.disconnected {
+  display: block;
+}
+
+#status-container.error .status-msg.error {
+  display: block;
+}
+
+#status-container.connected .status-msg.connected {
+  display: block;
+}
+
+
