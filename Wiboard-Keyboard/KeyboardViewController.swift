@@ -12,6 +12,8 @@ class KeyboardViewController: UIInputViewController, WiboardServiceDelegate {
 
     var keyboardView: KeyboardView!
 
+    var openedConnections = 0
+
     override func updateViewConstraints() {
         super.updateViewConstraints()
 
@@ -35,7 +37,12 @@ class KeyboardViewController: UIInputViewController, WiboardServiceDelegate {
             service.delegate = self
             service.start()
 
-            self.keyboardView.hostAddrLabel.text = "\( localIPAddress() ):\( service.port )"
+            if let ipAddress = localIPAddress() {
+                self.keyboardView.hostAddrLabel.text = "http://\( ipAddress ):\( service.port )/"
+            } else {
+                self.keyboardView.hostAddrLabel.text = NSLocalizedString("Connect to Wi-Fi", comment: "Connect to Wi-Fi")
+            }
+
         }
     }
 
@@ -66,9 +73,24 @@ class KeyboardViewController: UIInputViewController, WiboardServiceDelegate {
     }
 
     func serviceDidOpenConnection(service: WiboardService) {
+        openedConnections++
+        let text = NSMutableAttributedString()
+        text.appendAttributedString(NSAttributedString(string: "\u{f25c} ",
+            attributes: [NSFontAttributeName: UIFont(name: "ionicons", size: 16)]))
+        text.appendAttributedString(NSAttributedString(string: NSLocalizedString("Connected", comment: "Connected")))
+
+        dispatch_async(dispatch_get_main_queue()) {
+            self.keyboardView.statusLabel.attributedText = text
+        }
     }
 
     func serviceDidCloseConnection(service: WiboardService) {
+        if --openedConnections == 0 {
+            dispatch_async(dispatch_get_main_queue()) {
+                self.keyboardView.statusLabel.text = NSLocalizedString("Disconnected", comment: "Disconnected")
+            }
+        }
+
     }
 
     func service(service: WiboardService, didAdjustTextPositionByOffset offset: Int) {

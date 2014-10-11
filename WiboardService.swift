@@ -73,12 +73,15 @@ class WiboardService: WebSocketDelegate {
 
     func webSocketDidOpen(ws: WebSocket!) {
         sendContentAroundText(ws)
+
+        delegate?.serviceDidOpenConnection(self)
     }
 
     func webSocketDidClose(ws: WebSocket!) {
-        //NSLog("webSocketDidClose")
         // Remove closed ws
         websockets = websockets.filter { $0 != ws }
+
+        delegate?.serviceDidCloseConnection(self)
     }
 
     func webSocket(ws: WebSocket!, didReceiveMessage msg: String!) {

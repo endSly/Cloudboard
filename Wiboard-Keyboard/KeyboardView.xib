@@ -15,8 +15,8 @@
             <rect key="frame" x="0.0" y="0.0" width="350" height="209"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="127.0.0.1:12345" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCA-gm-OTh">
-                    <rect key="frame" x="40" y="53" width="270" height="40"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://127.0.0.1:12345/" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCA-gm-OTh">
+                    <rect key="frame" x="40" y="80" width="270" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Fun-Tk-NMN"/>
                     </constraints>
@@ -35,20 +35,48 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse following IP in your Browser:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ubw-x6-GNz">
+                    <rect key="frame" x="47" y="51" width="255.5" height="20.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disconnected" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjn-Yj-xUT">
+                    <rect key="frame" x="174" y="165" width="160" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="Lno-oe-BbU"/>
+                        <constraint firstAttribute="width" constant="160" id="p13-l5-SG7"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="ydL-cE-xtL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="qCJ-CD-TdC" firstAttribute="leading" secondItem="NDg-kh-phV" secondAttribute="leading" constant="8" id="CvE-rH-qE1"/>
+                <constraint firstAttribute="trailing" secondItem="fjn-Yj-xUT" secondAttribute="trailing" constant="16" id="G16-cx-oub"/>
                 <constraint firstAttribute="trailing" secondItem="uCA-gm-OTh" secondAttribute="trailing" constant="40" id="KCd-WM-LVb"/>
                 <constraint firstItem="uCA-gm-OTh" firstAttribute="leading" secondItem="NDg-kh-phV" secondAttribute="leading" constant="40" id="Lji-9x-vHa"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fjn-Yj-xUT" secondAttribute="trailing" constant="8" id="SXq-RA-mhq"/>
+                <constraint firstItem="Ubw-x6-GNz" firstAttribute="centerX" secondItem="uCA-gm-OTh" secondAttribute="centerX" id="ZFp-Ca-JpY"/>
+                <constraint firstAttribute="bottom" secondItem="fjn-Yj-xUT" secondAttribute="bottom" constant="16" id="fkv-2g-Pws"/>
                 <constraint firstAttribute="bottom" secondItem="qCJ-CD-TdC" secondAttribute="bottom" constant="8" id="jGh-Ki-V9L"/>
-                <constraint firstItem="uCA-gm-OTh" firstAttribute="top" secondItem="NDg-kh-phV" secondAttribute="top" constant="53" id="nX9-PS-nk2"/>
+                <constraint firstItem="uCA-gm-OTh" firstAttribute="top" secondItem="NDg-kh-phV" secondAttribute="top" constant="80" id="nX9-PS-nk2"/>
+                <constraint firstItem="uCA-gm-OTh" firstAttribute="top" secondItem="Ubw-x6-GNz" secondAttribute="bottom" constant="8" id="uYl-pS-sQ6"/>
+                <constraint firstAttribute="bottom" secondItem="fjn-Yj-xUT" secondAttribute="bottom" constant="8" id="wEX-1S-EcY"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="SXq-RA-mhq"/>
+                    <exclude reference="wEX-1S-EcY"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="hostAddrLabel" destination="uCA-gm-OTh" id="GD9-SL-bSj"/>
                 <outlet property="nextKeyboardButton" destination="qCJ-CD-TdC" id="qGR-JB-cUK"/>
+                <outlet property="statusLabel" destination="fjn-Yj-xUT" id="Z2z-ZN-ANg"/>
             </connections>
             <point key="canvasLocation" x="413" y="401.5"/>
         </view>
