@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wiboard</title>
+  <title>Cloudboard</title>
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
 </head>
 <body>
   <header class="container">
@@ -15,12 +16,17 @@
           Error
         </div>
         <div class="status-msg connected">
+          <i class="ion-wifi"></i>
           Connected
         </div>
       </div>
     </div>
+    <div class="content brand">
+      <h1>Cloudboard</h1>
+    </div>
   </header>
   <div id="edit-container" class="container">
+    <h3>Just type...</h3>
     <p id="edit-paragraph" class="content">
       <span id="content-before">&nbsp;</span>
       <span id="content-editable" contentEditable="true"></span>
@@ -28,7 +34,9 @@
     </p>
   </div>
   <footer class="container">
-
+    <div class="content">
+      <p class="copyright">Copyright (c) 2014 Cloudboard.</p>
+    </div>
   </footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="/app.js"></script>

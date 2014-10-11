@@ -83,7 +83,7 @@ $(function() {
     if (timeoutHandle)
       clearTimeout(timeoutHandle);
 
-    timeoutHandle = setTimeout(sendText, 750);
+    timeoutHandle = setTimeout(sendText, 500);
 
     var cursorOffset = getCaretCharacterOffsetWithin(document.getElementById('content-editable'));
 
