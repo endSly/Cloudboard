@@ -35,8 +35,8 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse following IP in your Browser:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ubw-x6-GNz">
-                    <rect key="frame" x="47" y="51" width="255.5" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse following IP in your Browser:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ubw-x6-GNz">
+                    <rect key="frame" x="20" y="51" width="309.5" height="20.5"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -50,18 +50,32 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKd-ep-fqw">
+                    <rect key="frame" x="40" y="22" width="270" height="125"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="125" id="mEd-LR-wuK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="qCJ-CD-TdC" firstAttribute="leading" secondItem="NDg-kh-phV" secondAttribute="leading" constant="8" id="CvE-rH-qE1"/>
+                <constraint firstItem="mKd-ep-fqw" firstAttribute="leading" secondItem="NDg-kh-phV" secondAttribute="leading" constant="40" id="DC0-oI-VnJ"/>
                 <constraint firstAttribute="trailing" secondItem="fjn-Yj-xUT" secondAttribute="trailing" constant="16" id="G16-cx-oub"/>
+                <constraint firstAttribute="trailing" secondItem="Ubw-x6-GNz" secondAttribute="trailing" constant="20" id="IaV-gI-yWd"/>
                 <constraint firstAttribute="trailing" secondItem="uCA-gm-OTh" secondAttribute="trailing" constant="40" id="KCd-WM-LVb"/>
                 <constraint firstItem="uCA-gm-OTh" firstAttribute="leading" secondItem="NDg-kh-phV" secondAttribute="leading" constant="40" id="Lji-9x-vHa"/>
+                <constraint firstItem="Ubw-x6-GNz" firstAttribute="leading" secondItem="NDg-kh-phV" secondAttribute="leading" constant="20" id="Mao-zc-JgJ"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fjn-Yj-xUT" secondAttribute="trailing" constant="8" id="SXq-RA-mhq"/>
                 <constraint firstItem="Ubw-x6-GNz" firstAttribute="centerX" secondItem="uCA-gm-OTh" secondAttribute="centerX" id="ZFp-Ca-JpY"/>
+                <constraint firstItem="mKd-ep-fqw" firstAttribute="top" secondItem="NDg-kh-phV" secondAttribute="top" constant="22" id="fFh-0a-Y2O"/>
                 <constraint firstAttribute="bottom" secondItem="fjn-Yj-xUT" secondAttribute="bottom" constant="16" id="fkv-2g-Pws"/>
                 <constraint firstAttribute="bottom" secondItem="qCJ-CD-TdC" secondAttribute="bottom" constant="8" id="jGh-Ki-V9L"/>
                 <constraint firstItem="uCA-gm-OTh" firstAttribute="top" secondItem="NDg-kh-phV" secondAttribute="top" constant="80" id="nX9-PS-nk2"/>
+                <constraint firstAttribute="trailing" secondItem="mKd-ep-fqw" secondAttribute="trailing" constant="40" id="tEJ-bk-rPj"/>
                 <constraint firstItem="uCA-gm-OTh" firstAttribute="top" secondItem="Ubw-x6-GNz" secondAttribute="bottom" constant="8" id="uYl-pS-sQ6"/>
                 <constraint firstAttribute="bottom" secondItem="fjn-Yj-xUT" secondAttribute="bottom" constant="8" id="wEX-1S-EcY"/>
             </constraints>
@@ -74,9 +88,11 @@
                 </mask>
             </variation>
             <connections>
+                <outlet property="errorLabel" destination="mKd-ep-fqw" id="1eg-Ze-qeh"/>
                 <outlet property="hostAddrLabel" destination="uCA-gm-OTh" id="GD9-SL-bSj"/>
                 <outlet property="nextKeyboardButton" destination="qCJ-CD-TdC" id="qGR-JB-cUK"/>
                 <outlet property="statusLabel" destination="fjn-Yj-xUT" id="Z2z-ZN-ANg"/>
+                <outlet property="titleLabel" destination="Ubw-x6-GNz" id="13C-Rm-pcC"/>
             </connections>
             <point key="canvasLocation" x="413" y="401.5"/>
         </view>

@@ -9,8 +9,9 @@
 import UIKit
 
 class KeyboardView: UIView {
-
     @IBOutlet var nextKeyboardButton: UIButton!
     @IBOutlet var hostAddrLabel: UILabel!
     @IBOutlet var statusLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var errorLabel: UILabel!
 }

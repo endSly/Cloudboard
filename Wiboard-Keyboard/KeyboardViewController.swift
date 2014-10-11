@@ -35,10 +35,23 @@ class KeyboardViewController: UIInputViewController, WiboardServiceDelegate {
         dispatch_async(dispatch_get_main_queue()) {
             let service = WiboardService.sharedService
             service.delegate = self
-            service.start()
 
-            if let ipAddress = localIPAddress() {
+
+            if let error = service.start() {
+                let errorMsg = NSLocalizedString("Cloudboard service unable to start. " +
+                    "You should allow full access to keyboard in " +
+                    "Setting > General > Keyboard > Keyboards > Remote Keyboard.", comment: "Error Message")
+
+                self.keyboardView.statusLabel.text = NSLocalizedString("Error", comment: "Error status")
+
+                self.keyboardView.errorLabel.text = errorMsg
+                self.keyboardView.titleLabel.text = ""
+                self.keyboardView.hostAddrLabel.text = ""
+                return
+
+            } else if let ipAddress = localIPAddress() {
                 self.keyboardView.hostAddrLabel.text = "http://\( ipAddress ):\( service.port )/"
+
             } else {
                 self.keyboardView.hostAddrLabel.text = NSLocalizedString("Connect to Wi-Fi", comment: "Connect to Wi-Fi")
             }
