@@ -17,25 +17,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="snD-yK-cdu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundGradiend" translatesAutoresizingMaskIntoConstraints="NO" id="aZr-VW-qI9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloudboard" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Ace-yt-aEe">
+                                <rect key="frame" x="36" y="80" width="528" height="42.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42.5" id="MOS-ZQ-1Yx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="You can test remote keyboard here..." textAlignment="center" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="snD-yK-cdu">
                                 <rect key="frame" x="16" y="285" width="568" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="bft-gs-Ygx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can now enable remote keyboard from Settings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8Sy-mo-UQm">
+                                <rect key="frame" x="80" y="147" width="441" height="111.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="111.5" id="FZi-Pb-qCl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Sy-mo-UQm" secondAttribute="trailing" constant="63" id="1WD-fH-IvR"/>
                             <constraint firstItem="snD-yK-cdu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="265" id="2sb-EC-f5X"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ace-yt-aEe" secondAttribute="trailing" constant="20" id="6D8-Ou-iFh"/>
+                            <constraint firstItem="Ace-yt-aEe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="7E0-CP-zeg"/>
                             <constraint firstItem="snD-yK-cdu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="HMk-dy-vox"/>
+                            <constraint firstItem="aZr-VW-qI9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="J9S-9U-zTC"/>
+                            <constraint firstItem="8Sy-mo-UQm" firstAttribute="top" secondItem="Ace-yt-aEe" secondAttribute="bottom" constant="24.5" id="Mbs-aN-Lp4"/>
                             <constraint firstItem="snD-yK-cdu" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="NfC-k1-na9"/>
+                            <constraint firstItem="8Sy-mo-UQm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="64" id="Oc0-Dl-9ma"/>
+                            <constraint firstItem="aZr-VW-qI9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="PVQ-el-Wcm"/>
+                            <constraint firstItem="Ace-yt-aEe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="S0b-yf-8x0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aZr-VW-qI9" secondAttribute="trailing" constant="-16" id="cN1-DZ-mYI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aZr-VW-qI9" secondAttribute="bottom" id="fhD-TW-zNY"/>
+                            <constraint firstItem="Ace-yt-aEe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="140" id="gTz-Xi-Az1"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gTz-Xi-Az1"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="testingInputView" destination="snD-yK-cdu" id="39Z-Qw-nNt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="BackgroundGradiend" width="1" height="100"/>
+    </resources>
 </document>

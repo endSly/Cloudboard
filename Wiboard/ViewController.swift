@@ -10,9 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var testingInputView: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        testingInputView.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
