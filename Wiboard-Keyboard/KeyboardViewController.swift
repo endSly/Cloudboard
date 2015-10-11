@@ -25,8 +25,8 @@ class KeyboardViewController: UIInputViewController, WiboardServiceDelegate {
 
         var nib = UINib(nibName: "KeyboardView", bundle: nil)
         let objects = nib.instantiateWithOwner(self, options: nil)
-        keyboardView = objects[0] as KeyboardView
-        keyboardView.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
+        keyboardView = objects[0] as! KeyboardView
+        keyboardView.autoresizingMask = [UIViewAutoresizing.FlexibleHeight, UIViewAutoresizing.FlexibleWidth];
         keyboardView.frame = self.view.frame
         self.view.addSubview(keyboardView)
 
@@ -64,11 +64,11 @@ class KeyboardViewController: UIInputViewController, WiboardServiceDelegate {
         // Dispose of any resources that can be recreated
     }
 
-    override func textWillChange(textInput: UITextInput) {
+    override func textWillChange(textInput: UITextInput?) {
         // The app is about to change the document's contents. Perform any preparation here.
     }
 
-    override func textDidChange(textInput: UITextInput) {
+    override func textDidChange(textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
 
     }
@@ -89,7 +89,7 @@ class KeyboardViewController: UIInputViewController, WiboardServiceDelegate {
         openedConnections++
         let text = NSMutableAttributedString()
         text.appendAttributedString(NSAttributedString(string: "\u{f25c} ",
-            attributes: [NSFontAttributeName: UIFont(name: "ionicons", size: 16)]))
+            attributes: [NSFontAttributeName: UIFont(name: "ionicons", size: 16)!]))
         text.appendAttributedString(NSAttributedString(string: NSLocalizedString("Connected", comment: "Connected")))
 
         dispatch_async(dispatch_get_main_queue()) {

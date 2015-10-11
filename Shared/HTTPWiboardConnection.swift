@@ -11,8 +11,8 @@ import Foundation
 class HTTPWiboardConnection: HTTPConnection, WebSocketDelegate {
 
     var webSocket: WebSocket?
-    
-    override func httpResponseForMethod(method: String!, URI path: String!) -> NSObject! {
+
+    override func httpResponseForMethod(method: String!, URI path: String!) -> protocol<NSObjectProtocol, HTTPResponse>! {
         NSLog("[\( method )] \( path )")
 
         switch (method, path) {
@@ -41,5 +41,4 @@ class HTTPWiboardConnection: HTTPConnection, WebSocketDelegate {
         webSocket = socket
         return socket
     }
-
 }

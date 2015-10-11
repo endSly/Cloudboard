@@ -275,6 +275,7 @@
 				0D632FCA19E415B60095B03D /* Resources */,
 				0D63300319E4174A0095B03D /* Embed App Extensions */,
 				EC81D84327191804AD758EDA /* Copy Pods Resources */,
+				D9CC5C63F0EF89FC76DBA459 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -313,6 +314,7 @@
 				0D632FF219E4174A0095B03D /* Frameworks */,
 				0D632FF319E4174A0095B03D /* Resources */,
 				2AE9A3BD9D91BFDDF4D5A20F /* Copy Pods Resources */,
+				E3DF6D726105471900652CFB /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -329,6 +331,8 @@
 		0D632FC419E415B60095B03D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Endika Gutiérrez Salas";
 				TargetAttributes = {
@@ -442,6 +446,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D9CC5C63F0EF89FC76DBA459 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3DF6D726105471900652CFB /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EC81D84327191804AD758EDA /* Copy Pods Resources */ = {

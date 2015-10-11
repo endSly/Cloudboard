@@ -41,7 +41,7 @@ class WiboardService: WebSocketDelegate {
     private var httpServer: HTTPServer?
     private var websockets: [WebSocket] = []
 
-    var port :UInt16 {
+    var port: UInt16 {
         get { return httpServer!.listeningPort() }
     }
 
@@ -51,67 +51,75 @@ class WiboardService: WebSocketDelegate {
         server.setConnectionClass(HTTPWiboardConnection)
         server.setPort(12345)
 
-        let path = NSBundle.mainBundle().resourcePath!.stringByAppendingPathComponent("web.bundle")
+        let path = NSBundle.mainBundle().resourcePath!.stringByAppendingString("/web.bundle")
         server.setDocumentRoot(path)
 
-        var error: NSError?
-
-        if server.start(&error) {
+        do {
+            try server.start()
             NSLog("Listening \( server.listeningPort() )")
             httpServer = server
 
-        } else {
+        } catch let error as NSError {
             NSLog("Error \( error )")
+            return error
         }
-
-        return error
+        return nil
     }
 
     func handleSocket(socket: WebSocket) {
         websockets.append(socket)
     }
 
-    func webSocketDidOpen(ws: WebSocket!) {
+    @objc func webSocketDidOpen(ws: WebSocket!) {
         sendContentAroundText(ws)
 
         delegate?.serviceDidOpenConnection(self)
     }
 
-    func webSocketDidClose(ws: WebSocket!) {
+    @objc func webSocketDidClose(ws: WebSocket!) {
         // Remove closed ws
         websockets = websockets.filter { $0 != ws }
 
         delegate?.serviceDidCloseConnection(self)
     }
 
-    func webSocket(ws: WebSocket!, didReceiveMessage msg: String!) {
+    @objc func webSocket(ws: WebSocket!, didReceiveMessage msg: String!) {
         //NSLog("webSocketDidReceiveMessage \( msg )\n")
 
-        var error: NSError?
         let jsonData = msg.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) as NSData!
-        let json = NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.allZeros, error: &error) as NSDictionary
 
-        switch json["type"] as String {
-        case "text":
-            delegate?.serviceTextHasInserted(self, text: json["content"] as String)
-        case "movement":
-            delegate?.service(self, didAdjustTextPositionByOffset: json["offset"] as Int)
-        case "backward":
-            delegate?.serviceDeleteBackwardHasInserted(self)
-        default:
-            break
+        do {
+            let json = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions()) as! NSDictionary
+
+            switch json["type"] as! String {
+            case "text":
+                delegate?.serviceTextHasInserted(self, text: json["content"] as! String)
+            case "movement":
+                delegate?.service(self, didAdjustTextPositionByOffset: json["offset"] as! Int)
+            case "backward":
+                delegate?.serviceDeleteBackwardHasInserted(self)
+            default:
+                break
+            }
+
+            sendContentAroundText(ws)
+        } catch let error {
+            NSLog("Error \( error )")
         }
 
-        sendContentAroundText(ws)
+
     }
 
     private func sendMessage(ws:WebSocket, message: AnyObject) {
-        var error: NSError?
-        let data = NSJSONSerialization.dataWithJSONObject(message, options: NSJSONWritingOptions.allZeros, error: &error)
-
-        let json = NSString(data: data!, encoding: NSUTF8StringEncoding)
-        ws.sendMessage(json)
-
+        let data: NSData?
+        do {
+            data = try NSJSONSerialization.dataWithJSONObject(message, options: NSJSONWritingOptions())
+            if let json = NSString(data: data!, encoding: NSUTF8StringEncoding) {
+                ws.sendMessage(json as String)
+            }
+        } catch let error {
+            NSLog("Error \( error )")
+        }
     }
 
     private func sendContentAroundText(ws: WebSocket) {
